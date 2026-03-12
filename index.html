@@ -20,7 +20,7 @@
         <h1><img class="f1logo" src="images/F1.svg.png"> Tracker</h1>
 
         <ul>
-            <li class="active"><a href="main.html">Home</a></li>
+            <li class="active"><a href="index.html">Home</a></li>
             <li><a href="schedule.html">Schedule</a></li>
             <li><a href="points.html">Points</a></li>
         </ul>
@@ -93,7 +93,7 @@
                 document.getElementById("usernameText").textContent = user.username;
 
                 // Change link to profile page instead of login
-                document.getElementById("profileLink").href = "main.html";
+                document.getElementById("profileLink").href = "index.html";
             }
 
             document.addEventListener("DOMContentLoaded", function() {
@@ -114,7 +114,7 @@
                 // Logout function
                 logoutBtn.addEventListener("click", function() {
                     localStorage.removeItem("userProfile");
-                    window.location.href = "main.html";
+                    window.location.href = "index.html";
                 });
 
             });
@@ -125,4 +125,5 @@
     <footer>
 
     </footer>
+
 </html>
