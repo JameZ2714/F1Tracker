@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>Formula 1 Tracker Log In</title>
+        <link rel="stylesheet" href="style.css">
+        <style href="script.js"></style>
+        <link rel="icon" type="image/x-icon" href="images/f1Favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <div class="profile">
+            <a href="login.html"><p>Log in</p></a>
+            <img class="user" src="images/user.webp">
+        </div>
+
+        <h1><img class="f1logo" src="images/F1.svg.png"> Tracker</h1>
+
+        <ul>
+            <li class="active"><a href="main.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="points.html">Points</a></li>
+        </ul>
+
+
+        <div>
+            <!-- Main section of webpage -->
+            <h2>Log In/Sign Up:</h2>
+
+            <div class="form">
+
+                <!-- Content for Log In -->
+                
+                <form id="userForm">
+
+                    <h3>Account Info</h3>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+
+                    <h3>Select Your Favorite Drivers</h3>
+
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" name="drivers" value="Max Verstappen"> Max Verstappen</label>
+                        <label><input type="checkbox" name="drivers" value="Liam Lawson"> Liam Lawson</label>
+                        <label><input type="checkbox" name="drivers" value="Lewis Hamilton"> Lewis Hamilton</label>
+                        <label><input type="checkbox" name="drivers" value="Charles Leclerc"> Charles Leclerc</label>
+                        <label><input type="checkbox" name="drivers" value="Lando Norris"> Lando Norris</label>
+                        <label><input type="checkbox" name="drivers" value="Oscar Piastri"> Oscar Piastri</label>
+                        <label><input type="checkbox" name="drivers" value="George Russell"> George Russell</label>
+                        <label><input type="checkbox" name="drivers" value="Kimi Antonelli"> Kimi Antonelli</label>
+                        <label><input type="checkbox" name="drivers" value="Fernando Alonso"> Fernando Alonso</label>
+                        <label><input type="checkbox" name="drivers" value="Lance Stroll"> Lance Stroll</label>
+                        <label><input type="checkbox" name="drivers" value="Pierre Gasly"> Pierre Gasly</label>
+                        <label><input type="checkbox" name="drivers" value="Franco Colapinto"> Franco Colapinto</label>
+                        <label><input type="checkbox" name="drivers" value="Esteban Ocon"> Esteban Ocon</label>
+                        <label><input type="checkbox" name="drivers" value="Oliver Bearman"> Oliver Bearman</label>
+                        <label><input type="checkbox" name="drivers" value="Alexander Albon"> Alexander Albon</label>
+                        <label><input type="checkbox" name="drivers" value="Carlos Sainz"> Carlos Sainz</label>
+                        <label><input type="checkbox" name="drivers" value="Nico Hulkenberg"> Nico Hulkenberg</label>
+                        <label><input type="checkbox" name="drivers" value="Gabriel Bortoleto"> Gabriel Bortoleto</label>
+                        <label><input type="checkbox" name="drivers" value="Isack Hadjar"> Isack Hadjar</label>
+                        <label><input type="checkbox" name="drivers" value="Arvid Lindblad"> Arvid Lindblad</label>
+                    </div>
+
+                    <h3>Select Your Favorite Constructors</h3>
+
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" name="constructors" value="McLaren"> McLaren</label>
+                        <label><input type="checkbox" name="constructors" value="Oracle Red Bull Racing"> Oracle Red Bull Racing</label>
+                        <label><input type="checkbox" name="constructors" value="Ferrari"> Ferrari</label>
+                        <label><input type="checkbox" name="constructors" value="Mercedes"> Mercedes</label>
+                        <label><input type="checkbox" name="constructors" value="Williams"> Williams</label>
+                        <label><input type="checkbox" name="constructors" value="Racing Bulls"> Racing Bulls</label>
+                        <label><input type="checkbox" name="constructors" value="Aston Martin"> Aston Martin</label>
+                        <label><input type="checkbox" name="constructors" value="Haas"> Haas</label>
+                        <label><input type="checkbox" name="constructors" value="Audi"> Audi</label>
+                        <label><input type="checkbox" name="constructors" value="Alpine"> Alpine</label>
+                        <label><input type="checkbox" name="constructors" value="Cadillac"> Cadillac</label>
+                    </div>
+
+                    <h3>What Is Your Favorite Track?</h3>
+                    <input type="text" id="favoriteTrack" placeholder="Monza, Silverstone...">
+
+                    <br><br>
+                    <button type="submit">Create Account & Log In</button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+        <script>
+            document.getElementById("userForm").addEventListener("submit", function(e) {e.preventDefault();
+
+            // Get basic info
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const favoriteTrack = document.getElementById("favoriteTrack").value;
+
+            // Get selected drivers
+            const selectedDrivers = Array.from(
+                document.querySelectorAll('input[name="drivers"]:checked')).map(driver => driver.value);
+
+            // Get selected constructors
+            const selectedConstructors = Array.from(
+                document.querySelectorAll('input[name="constructors"]:checked')).map(team => team.value);
+
+            // Create user object
+            const userProfile = {
+                username: username,
+                password: password,
+                favoriteDrivers: selectedDrivers,
+                favoriteConstructors: selectedConstructors,
+                favoriteTrack: favoriteTrack,
+                createdAt: new Date(),
+                loggedIn: true
+            };
+
+            // Save to localStorage
+            localStorage.setItem("userProfile", JSON.stringify(userProfile));
+
+            // Redirect to home page
+            window.location.href = "main.html";
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const user = JSON.parse(localStorage.getItem("userProfile"));
+            const usernameText = document.getElementById("usernameText");
+            const profileLink = document.getElementById("profileLink");
+            const logoutBtn = document.getElementById("logoutBtn");
+
+            if (user && user.loggedIn) {
+                // Change "Log in" to username
+                usernameText.textContent = user.username;
+
+                // Link to profile instead of login
+                profileLink.href = "login.html"; // change if needed
+
+                // Show logout button
+                logoutBtn.style.display = "inline-block";
+            }
+
+            // Logout function
+            logoutBtn.addEventListener("click", function() {
+                localStorage.removeItem("userProfile");
+                window.location.href = "main.html";
+            });
+
+        });
+        </script>
+
+    </body>
+
+    <footer>
+
+    </footer>
+</html>

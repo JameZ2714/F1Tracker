@@ -1,0 +1,156 @@
+h1 {
+    text-align: center;
+    color: white;
+}
+
+h2 {
+  background-color: #ff0000;
+  padding: 5px;
+}
+
+h3{
+  color: white;
+}
+
+#profileLink {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style-position: inside;
+  align-content: space-around;
+  align-items: center;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+.profile {
+  color: white;
+  text-decoration: none;
+  display: flex;              /* puts text and image side by side */
+  align-items: center;        /* vertically aligns them */
+  justify-content: flex-end;  /* pushes everything to the right */
+  gap: 10px;                  /* space between text and image */
+  position: absolute;         /* moves it to top corner */
+  top: 10px;
+  right: 20px;
+}
+
+.user {
+  width: 50px;
+}
+
+form {
+  align-content: center;
+}
+
+.form {
+  background-color: #f00;
+  padding: 10px;
+  font-size: 20px;
+}
+
+/* form */
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.checkbox-grid label {
+    font-size: 14px;
+}
+
+.form input[type="text"] {
+    margin-bottom: 15px;
+}
+
+/* grid display */
+
+.container {
+  display: grid;
+  grid-template-columns: 50% auto;
+  background-color: #ff0000;
+  padding: 10px;
+}
+.container div {
+  align-items: center;
+  align-content: left;
+  background-color: #f00;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.rank {
+  list-style-position: inside;
+  padding-bottom: 14px;
+}
+
+body {
+  background-color: black;
+  text-align: center;
+}
+
+.f1logo {
+    width: 75px;
+
+}
+
+div {
+  color: white;
+}
+
+/* CSS for nav ber */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  background-color: #ff0000;
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+.active {
+  background-color: #111111;
+}
+
+/* filter ids */
+
+.filter {
+  background-color: #ff0000;
+  display: block;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.glue {
+  margin-bottom: 0px;
+}

@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <title>Formula 1 Tracker Home</title>
+        <link rel="stylesheet" href="style.css">
+        <style href="script.js"></style>
+        <link rel="icon" type="image/x-icon" href="images/f1Favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <div class="profile">
+            <a id="profileLink" href="login.html">
+                <span id="usernameText">Log in</span>
+            </a>
+            <button id="logoutBtn" style="display:none;">Log Out</button>
+            <img class="user" src="images/user.webp">
+        </div>
+
+        <h1><img class="f1logo" src="images/F1.svg.png"> Tracker</h1>
+
+        <ul>
+            <li class="active"><a href="main.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="points.html">Points</a></li>
+        </ul>
+
+
+        <div>
+            <!-- Main section of webpage -->
+            <h2>Races:</h2>
+
+            <div class="container">
+
+                <!-- most recent race 1 -->
+
+                <div>
+                    <img src="images/rounds1-24/round1.avif">
+                </div>
+
+                <div class="cont">
+                    <h3>Melbourn, Austrialia</h3>
+
+                    <ol class="rank">
+                        <li>Lando Norris, McLaren</li>
+                        <li>Max Verstappen, RedBull Racing</li>
+                        <li>George Russell, Mercedes</li>
+                    </ol>
+                </div>
+
+                <!-- most recent race 2 -->
+
+                <div>
+                    <img src="images/rounds1-24/round2.webp">
+                </div>
+
+                <div class="cont">
+                    <h3>Shanghai, China</h3>
+
+                    <ol class="rank">
+                        <li>Oscar Piastri, McLaren</li>
+                        <li>Lando Norris, McLaren</li>
+                        <li>George Russell, Mercedes</li>
+                    </ol>
+                </div>
+
+                <!-- most recent race 3 -->
+                
+                <div>
+                    <img src="images/rounds1-24/round3.avif">
+                </div>
+
+                <div class="cont">
+                    <h3>Suzuka, Japan</h3>
+
+                    <ol class="rank">
+                        <li>Max Verstappen, RedBull Racing</li>
+                        <li>Lando Norris, McLaren</li>
+                        <li>Oscar Piastri, McLaren</li>
+                    </ol>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <script>
+            const user = JSON.parse(localStorage.getItem("userProfile"));
+
+            if (user) {
+                document.getElementById("usernameText").textContent = user.username;
+
+                // Change link to profile page instead of login
+                document.getElementById("profileLink").href = "main.html";
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+
+                const user = JSON.parse(localStorage.getItem("userProfile"));
+                const usernameText = document.getElementById("usernameText");
+                const profileLink = document.getElementById("profileLink");
+                const logoutBtn = document.getElementById("logoutBtn");
+
+                if (user && user.loggedIn) {
+                    // Change "Log in" to username
+                    usernameText.textContent = user.username;
+
+                    // Show logout button
+                    logoutBtn.style.display = "inline-block";
+                }
+
+                // Logout function
+                logoutBtn.addEventListener("click", function() {
+                    localStorage.removeItem("userProfile");
+                    window.location.href = "main.html";
+                });
+
+            });
+        </script>
+
+    </body>
+
+    <footer>
+
+    </footer>
+</html>

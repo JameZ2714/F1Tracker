@@ -1,0 +1,505 @@
+<html>
+    <head>
+        <title>Formula 1 Tracker Points</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="images/f1Favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <div class="profile">
+            <a id="profileLink" href="login.html">
+                <span id="usernameText">Log in</span>
+            </a>
+            <button id="logoutBtn" style="display:none;">Log Out</button>
+            <img class="user" src="images/user.webp">
+        </div>
+
+        <h1><img class="f1logo" src="images/F1.svg.png"> Tracker</h1>
+
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li class="active"><a href="points.html">Points</a></li>
+        </ul>
+
+
+        <div>
+            <!-- Main section of webpage -->
+            <h2>Points:</h2>
+
+            <h2>Driver Standings:</h2>
+
+            <h2 class="glue">Filter:</h2>
+
+            <div class="filter">
+                <label><input type="checkbox" value="McLaren"> McLaren</label>
+                <label><input type="checkbox" value="RedBull"> Red Bull</label>
+                <label><input type="checkbox" value="Mercedes"> Mercedes</label>
+                <label><input type="checkbox" value="Ferrari"> Ferrari</label>
+                <label><input type="checkbox" value="Williams"> Williams</label>
+                <label><input type="checkbox" value="Aston"> Aston Martin</label>
+                <label><input type="checkbox" value="RB"> Racing Bulls</label>
+                <label><input type="checkbox" value="Haas"> Haas</label>
+                <label><input type="checkbox" value="Kick"> Kick Sauber</label>
+                <label><input type="checkbox" value="Alpine"> Alpine</label>
+
+                <button id="filterBtn" onclick="applyFilters()">Submit</button>
+                <button onclick="undoFilters()">Undo Filters</button>
+            </div>
+
+            
+
+        <div class="container">
+
+            <!-- Driver 1 -->
+            <div class="team McLaren">
+                <img src="images/drivers/LN4.webp">
+            </div>
+        
+            <div class="cont team McLaren">
+                <h3>Lando Norris</h3>
+                    <ul class="rank">
+                        <li>423 points</li>
+                    </ul>
+            </div>
+            
+
+            <!-- Driver 2 -->
+            <div class="team RedBull">
+                <img src="images/drivers/MV1.webp">
+            </div>
+            
+            <div class="cont team RedBull">
+                <h3>Max Verstappen</h3>
+
+                <ul class="rank">
+                    <li>421 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 3 -->
+            <div class="team McLaren">
+                <img src="images/drivers/OP81.webp" >
+            </div>
+
+            <div class="cont team McLaren">
+                <h3>Oscar Piastri</h3>
+
+                <ul class="rank">
+                    <li>410 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 4 -->
+            <div class="team Mercedes">
+                <img src="images/drivers/GR63.webp">
+            </div>
+
+            <div class="cont team Mercedes">
+                <h3>George Russell</h3>
+
+                <ul class="rank">
+                    <li>319 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 5 -->
+            <div class="team Ferrari">
+                <img src="images/drivers/CL16.jpg">
+            </div>
+
+            <div class="cont team Ferrari">
+                <h3>Charles Leclerc</h3>
+
+                <ul class="rank">
+                    <li>242 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 6 -->
+            <div class="team Ferrari">
+                <img src="images/drivers/LH44.webp">
+            </div>
+
+            <div class="cont team Ferrari">
+                <h3>Lewis Hamilton</h3>
+
+                <ul class="rank">
+                    <li>156 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 7 -->
+            <div class="team Mercedes">
+                <img src="images/drivers/KA12.jpg">
+            </div>
+
+            <div class="cont team Mercedes">
+                <h3>Kimi Antonelli</h3>
+
+                <ul class="rank">
+                    <li>150 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 8 -->
+            <div class="team Williams">
+                <img src="images/drivers/AA23.jpg">
+            </div>
+
+            <div class="cont team Williams">
+                <h3>Alexander Albon</h3>
+
+                <ul class="rank">
+                    <li>73 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 9 -->
+            <div class="team Williams">
+                <img src="images/drivers/CS55.jpg">
+            </div>
+
+            <div class="cont team Williams">
+                <h3>Carlos Sainz</h3>
+
+                <ul class="rank">
+                    <li>64 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 10 -->
+            <div class="team Aston">
+                <img src="images/drivers/FA14.jpg">
+            </div>
+
+            <div class="cont team Aston">
+                <h3>Fernando Alonso</h3>
+
+                <ul class="rank">
+                    <li>56 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 11 -->
+            <div class="team Kick">
+                <img src="images/drivers/NH27.avif">
+            </div>
+
+            <div class="cont team Kick">
+                <h3>Nico Hulkenberg</h3>
+
+                <ul class="rank">
+                    <li>51 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 12 -->
+            <div class="team RB">
+                <img src="images/drivers/IH6.webp">
+            </div>
+
+            <div class="cont team RB">
+                <h3>Isack Hadjar</h3>
+
+                <ul class="rank">
+                    <li>51 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 13 -->
+            <div class="team Haas">
+                <img src="images/drivers/OB87.jpg">
+            </div>
+
+            <div class="cont team Haas">
+                <h3>Oliver Bearman</h3>
+
+                <ul class="rank">
+                    <li>41 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 14 -->
+            <div class="team RB">
+                <img src="images/drivers/LL30.jpg">
+            </div>
+
+            <div class="cont team RB">
+                <h3>Liam Lawson</h3>
+
+                <ul class="rank">
+                    <li>38 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 15 -->
+            <div class="team Haas">
+                <img src="images/drivers/EO31.avif">
+            </div>
+
+            <div class="cont team Haas">
+                <h3>Esteban Ocon</h3>
+
+                <ul class="rank">
+                    <li>38 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 16 -->
+            <div class="team Aston">
+                <img src="images/drivers/LS18.jpg">
+            </div>
+
+            <div class="cont team Aston">
+                <h3>Lance Stroll</h3>
+
+                <ul class="rank">
+                    <li>33 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 17 -->
+            <div class="team RedBull">
+                <img src="images/drivers/YT22.jpeg">
+            </div>
+
+            <div class="cont team RedBull">
+                <h3>Yuki Tsunoda</h3>
+
+                <ul class="rank">
+                    <li>33 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 18 -->
+            <div class="team Alpine">
+                <img src="images/drivers/PG10.webp">
+            </div>
+
+            <div class="cont team Alpine">
+                <h3>Pierre Gasly</h3>
+
+                <ul class="rank">
+                    <li>22 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 19 -->
+            <div class="team Kick">
+                <img src="images/drivers/GB5.jpg">
+            </div>
+
+            <div class="cont team Kick">
+                <h3>Gabriel Bortoleto</h3>
+
+                <ul class="rank">
+                    <li>19 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 20 -->
+            <div class="team Alpine">
+                <img src="images/drivers/FC43.webp">
+            </div>
+
+            <div class="cont team Alpine">
+                <h3>Franco Colapinto</h3>
+
+                <ul class="rank">
+                    <li>0 points</li>
+                </ul>
+            </div>
+
+            <!-- Driver 21 -->
+            <div class="team Alpine">
+                <img src="images/drivers/JD7.jpg">
+            </div>
+
+            <div class="cont team Alpine">
+                <h3>Jack Doohan</h3>
+
+                <ul class="rank">
+                    <li>0 points</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <h2>Constructor Standings:</h2>
+
+        <div class="container">
+
+            <!-- Constructor 1 -->
+            <div class="team McLaren">
+                <img src="images/constructors/McLaren.jpg">
+            </div>
+
+            <div class="cont team McLaren">
+                <h3>McLaren</h3>
+
+                <ul class="rank">
+                    <li>833 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 2 -->
+            <div class="team Mercedes">
+                <img src="images/constructors/Mercedes.png">
+            </div>
+
+            <div class="cont team Mercedes">
+                <h3>Mercedes</h3>
+
+                <ul class="rank">
+                    <li>469 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 3 -->
+            <div class="team RedBull">
+                <img src="images/constructors/RedBullRacing.png">
+            </div>
+
+            <div class="cont team RedBull">
+                <h3>Red Bull Racing</h3>
+
+                <ul class="rank">
+                    <li>454 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 4 -->
+            <div class="team Ferrari">
+                <img src="images/constructors/Ferrari.png">
+            </div>
+
+            <div class="cont team Ferrari">
+                <h3>Ferrari</h3>
+
+                <ul class="rank">
+                    <li>398 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 5 -->
+            <div class="team Williams">
+                <img src="images/constructors/Williams.jpg">
+            </div>
+
+            <div class="cont team Williams">
+                <h3>Williams</h3>
+
+                <ul class="rank">
+                    <li>137 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 6 -->
+            <div class="team RB">
+                <img src="images/constructors/Racing Bulls.jpg">
+            </div>
+
+            <div class="cont team RB">
+                <h3>Racing Bulls</h3>
+
+                <ul class="rank">
+                    <li>89 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 7 -->
+            <div class="team Aston">
+                <img src="images/constructors/astonmartin.jpg">
+            </div>
+
+            <div class="cont team Aston">
+                <h3>Aston Martin</h3>
+
+                <ul class="rank">
+                    <li>89 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 8 -->
+            <div class="team Haas">
+                <img src="images/constructors/Haas.png">
+            </div>
+
+            <div class="cont team Haas">
+                <h3>Haas</h3>
+
+                <ul class="rank">
+                    <li>79 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 9 -->
+            <div class="team Kick">
+                <img src="images/constructors/kick.png">
+            </div>
+
+            <div class="cont team Kick">
+                <h3>Kick Sauber</h3>
+
+                <ul class="rank">
+                    <li>70 points</li>
+                </ul>
+            </div>
+
+            <!-- Constructor 10 -->
+            <div class="team Alpine">
+                <img src="images/constructors/Alpine.jpg">
+            </div>
+
+            <div class="cont team Alpine">
+                <h3>Alpine</h3>
+
+                <ul class="rank">
+                    <li>22 points</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+
+                const user = JSON.parse(localStorage.getItem("userProfile"));
+                const usernameText = document.getElementById("usernameText");
+                const profileLink = document.getElementById("profileLink");
+                const logoutBtn = document.getElementById("logoutBtn");
+
+                if (user && user.loggedIn) {
+                    // Change "Log in" to username
+                    usernameText.textContent = user.username;
+
+                    // Link to profile instead of login
+                    profileLink.href = "points.html"; // change if needed
+
+                    // Show logout button
+                    logoutBtn.style.display = "inline-block";
+                }
+
+                // Logout function
+                logoutBtn.addEventListener("click", function() {
+                    localStorage.removeItem("userProfile");
+                    window.location.href = "main.html";
+                });
+
+            });
+
+        </script>
+
+
+    </body>
+
+    <footer>
+
+    </footer>
+</html>
